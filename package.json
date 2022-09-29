@@ -7,11 +7,12 @@
 		"make:migration": "tsnd --transpile-only --ignore-watch node_modules ./src/index.ts",
 		"build": "rimraf ./build && yarn tsc",
 		"make:migration:prod": "node ./build/index.js",
-		"postinstall": "nvmrc-check --node $(cat .nvmrc)",
 		"lint": "tsc --noEmit && eslint . --ext .ts,.js,.json",
 		"lint-and-fix": "eslint . --ext .ts,.js,.json --fix",
 		"prettier-format": "pretty-quick --pattern '**/*.{json,js,ts,md}' --verbose",
 		"tscheck": "tsc",
+		"install": "cp .env.example .env",
+		"postinstall": "nvmrc-check --node $(cat .nvmrc)",
 		"prepare": "husky install"
 	},
 	"dependencies": {
